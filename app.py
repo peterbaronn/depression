@@ -185,4 +185,4 @@ if st.button("Predict Depression Risk"):
     elif probability >= 0.40:
         st.info("Risk Level: Moderate")
     else:
-        st.success("Risk Level: Low")-
+        st.success("Risk Level: Low")
