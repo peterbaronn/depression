@@ -52,10 +52,12 @@ academic_pressure = st.slider(
     0.0, 5.0, 3.0, step=1.0
 )
 
-cgpa = st.slider(
+ipk_indonesia = st.slider(
     "CGPA",
-    0.0, 10.0, 7.5, step=0.1
+    0.0, 4.0, 3.0, step=0.01
 )
+
+cgpa_for_model = ipk_indonesia * 2.5
 
 study_satisfaction = st.slider(
     "Study Satisfaction",
