@@ -5,8 +5,15 @@ import joblib
 # =========================
 # LOAD MODEL
 # =========================
-model_package = joblib.load("depression_model.pkl")
-
+try:
+    model_package = joblib.load("depression_model.pkl")
+except ModuleNotFoundError as e:
+    st.error(f"Module yang hilang di Streamlit Cloud: {e.name}")
+    st.stop()
+except Exception as e:
+    st.error(f"Gagal load model: {type(e).__name__}")
+    st.write(str(e))
+    st.stop()
 model = model_package["model"]
 scaler = model_package["scaler"]
 feature_columns = model_package["feature_columns"]
